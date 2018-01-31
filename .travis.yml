@@ -1,16 +1,9 @@
-
-
-env:
-  global:
-    - CC_TEST_REPORTER_ID=29453e906eae975ef5191c116c7c681444a029e73fe1e7e03096d2382197812d
 language: node_js
-node_js:
+node_js:  
   - "8"
-install: npm install
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-after_script:
+install: 
+  - npm install
+  - npm install -g codecov
+after_script:  
   - npm run lintdryfix
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - codecov
