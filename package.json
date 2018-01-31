@@ -47,5 +47,9 @@
     "build": "./node_modules/.bin/rollup -c rollup.config.js",
     "lint": "./node_modules/.bin/eslint . --fix",
     "lintdryfix": "./node_modules/.bin/eslint . --fix-dry-run"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
